@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
 
-function App() {
+export default function App() {
+  const users = [
+    {
+      name: "Sundar",
+      profile:
+        "https://www.andhrawishesh.com/media/k2/items/src/Arjun-Reddy-Movie-Sequel.jpg"
+    },
+    {
+      name: "Vijay",
+      profile:
+        "https://filmfare.wwmindia.com/content/2021/sep/shahrukhkhan21631161651.jpg"
+    },
+    {
+      name: "Ajith",
+      profile:
+        "https://www.filmibeat.com/img/2015/02/12-1423727271-yennaiarindhaalboxoffice.jpg"
+    }
+  ];
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {users.map((ele) => (
+        <Welcome name={ele.name} profile={ele.profile} />
+      ))}
     </div>
   );
 }
-
-export default App;
+function Welcome({ name, profile }) {
+  return (
+    <div>
+      <img className="pro-pic" src={profile} alt="profile-pic" />
+      <h1>hi, {name} 😍❤💕🎉👍!!!!</h1>
+    </div>
+  );
+}
